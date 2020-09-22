@@ -17,7 +17,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"><?=$message['subject']?></h5>
+                            <h5 class="card-title"><?=($message['reply_id']? 'RE: ' : '').$message['subject']?></h5>
                             <h6 class="card-subtitle mb-2 text-muted"><?=$message['from']?> - <?=date('d F Y H:i', $message['time'])?></h6>
                             <p class="card-text collapse" id="collapseContent<?=$message['id']?>"><?=$message['content']?></p>
 
