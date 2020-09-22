@@ -1,4 +1,4 @@
-<?php include "../../db/db_connection.php"; ?>
+<?php include "../../databases/db_connection.php"; ?>
 <!doctype html>
 <html>
 <?php include "../head.php";?>
