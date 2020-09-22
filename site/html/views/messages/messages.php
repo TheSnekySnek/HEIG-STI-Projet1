@@ -1,5 +1,5 @@
 <?php include "../../../databases/db_connection.php"; ?>
-<?php $auth_user="TheSnekySnek";?>
+<?php $auth_user="TheSnekySnek"; // TODO: remplacer par la vrai variable de session?>
 <!doctype html>
 <html>
 <?php include "../head.php";?>
