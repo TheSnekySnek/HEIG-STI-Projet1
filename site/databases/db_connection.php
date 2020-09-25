@@ -10,13 +10,14 @@ try {
      **************************************/
 
     // Create (connect to) SQLite database in file
-    $file_db = new PDO('sqlite:./database.sqlite');
+    $file_db = new PDO('sqlite:'.dirname(__FILE__).'/database.sqlite');
     // Set errormode to exceptions
     $file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // Close file database.sqlite connection
-    $file_db = null;
+
 }
 catch(PDOException $e) {
+    // Close file database.sqlite connection
+    $file_db = null;
     // Print PDOException message
     echo $e->getMessage();
 }
