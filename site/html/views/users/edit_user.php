@@ -1,6 +1,4 @@
-<?php include "../../../databases/db_connection.php"; ?>
-
-<?php
+<?php include "../../../databases/db_connection.php"; 
 session_start();
 
 // Check if the user is logged in
@@ -24,7 +22,6 @@ if(empty($user)){
 }
 
 ?>
-
 <!doctype html>
 <html>
 <?php include "../head.php";?>
