@@ -10,10 +10,10 @@
                 <a class="nav-link" href="/views/messages/messages.php">Mes messages</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Utilisateurs </a>
+                <a class="nav-link" href="/views/users/show_users.php">Utilisateurs </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Changer de mot de passe </a>
+                <a class="nav-link" href="/views/users/change_password.php">Changer de mot de passe </a>
             </li>
         </ul>
     </div>
