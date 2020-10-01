@@ -45,11 +45,13 @@ if(empty($user)){
                 <input type="checkbox" class="form-check-input" id="is_admin" name="is_admin" <?=$user['is_admin'] == 'true' ? "checked" : ""?>>
                 <label class="form-check-label" for="is_admin">Admin</label>
             </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="is_active" name="is_active" <?=$user['is_active'] == 'true' ? "checked" : ""?>>
-                <label class="form-check-label" for="is_active">Actif</label>
-            </div>
             <button type="submit" class="btn btn-primary">Modifier</button>
+        </form>
+        <br>
+        <form action="/controllers/users/delete_user.php" method="post">
+            <input type="hidden" name="username" value="<?=$user['username']?>">
+
+            <button type="submit" class="btn btn-danger">Supprimer</button>
         </form>
     </div>
 <?php include "../scripts.php";?>

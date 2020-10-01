@@ -29,20 +29,18 @@ if( $_SESSION['admin'] == 'false' ){
                 <tr>
                 <th scope="col">Utilisateur</th>
                 <th scope="col">Admin</th>
-                <th scope="col">Actif</th>
                 <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
             <?php
-            $sql = $file_db->prepare("SELECT * FROM users");
+            $sql = $file_db->prepare("SELECT * FROM users WHERE `is_active` = 'true'");
             $sql->execute();
             foreach ($sql->fetchAll() as $user) {
                 ?>
                 <tr>
                 <td><?=$user['username']?></td>
                 <td><?=$user['is_admin'] == 'true' ? "Oui" : "Non"?></td>
-                <td><?=$user['is_active'] == 'true' ? "Oui" : "Non"?></td>
                 <td><a href="./edit_user.php?username=<?=$user['username']?>">Modifier</a></td>
                 </tr>
                 <?php
