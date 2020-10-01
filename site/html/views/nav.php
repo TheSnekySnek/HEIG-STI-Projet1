@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/views/messages/messages.php">Messages <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/views/messages/messages.php">Mes messages</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/views/users/show_users.php">Utilisateurs </a>
