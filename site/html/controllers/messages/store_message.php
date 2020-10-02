@@ -1,9 +1,11 @@
 <?php
 session_start();
 include "../../../databases/db_connection.php";
+include "../../scripts/check_authentication.php";
+
 $_SESSION['errors'] = [];
 $_SESSION['old_post'] = $_POST;
-$auth_user = 'fabio10000';
+$auth_user = $_SESSION['user'];
 if (empty($_POST['sendTo']))
     $_SESSION['errors'][] = 'sendTo';
 else {
@@ -20,14 +22,19 @@ if (sizeof($_SESSION['errors']) > 0) {
     exit;
 } else {
     $_SESSION['errors'] = null;
-    $query = $file_db->prepare("INSERT INTO messages (subject, content, `time`, `from`, `to`) VALUES (?, ?, ?, ?, ?)");
-    $query->execute([
-        $_POST['subject'],
-        $_POST['content'],
-        time(),
-        $auth_user,
-        $_POST['sendTo']
-    ]);
-    header("Location: /views/messages/messages.php");
-    exit;
+    try {
+        $query = $file_db->prepare("INSERT INTO messages (subject, content, `time`, `from`, `to`) VALUES (?, ?, ?, ?, ?)");
+        $query->execute([
+            $_POST['subject'],
+            $_POST['content'],
+            time(),
+            $auth_user,
+            $_POST['sendTo']
+        ]);
+        header("Location: /views/messages/messages.php");
+        exit;
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+
 }

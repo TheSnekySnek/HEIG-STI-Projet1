@@ -1,9 +1,11 @@
 <?php
 session_start();
 include "../../../databases/db_connection.php";
+include "../../scripts/check_authentication.php";
+
 $_SESSION['errors'] = [];
 $_SESSION['old_post'] = $_POST;
-$auth_user = 'TheSnekySnek'; // TODO: change for the real authenticated user
+$auth_user = $_SESSION['user'];
 if (empty($_POST['id']))
     $_SESSION['errors'][] = 'id';
 else {

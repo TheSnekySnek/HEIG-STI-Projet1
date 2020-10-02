@@ -1,5 +1,10 @@
-<?php include "../../../databases/db_connection.php"; ?>
-<?php $auth_user="TheSnekySnek"; // TODO: remplacer par la vrai variable de session?>
+<?php
+include "../../../databases/db_connection.php";
+session_start();
+include "../../scripts/check_authentication.php";
+
+$auth_user = $_SESSION['user'];
+?>
 <!doctype html>
 <html>
 <?php include "../head.php";?>
@@ -9,7 +14,7 @@
         <h1 class="mt-2">Mes messages</h1>
         <a href="./new_message.php" class="btn btn-success my-2">Nouveau message</a>
         <?php
-        $sql = $file_db->prepare("SELECT * FROM messages WHERE `to` = ?");
+        $sql = $file_db->prepare("SELECT * FROM messages WHERE `to` = ? ORDER BY `time` DESC");
         $sql->execute([$auth_user]);
         foreach ($sql->fetchAll() as $message) {
             ?>
@@ -44,7 +49,7 @@
   // change the text of the collapse btn
   $('.show-btn').click(function(){
     $(this).text(function(i,old){
-      return old=='Lire' ?  'Cacher' : 'Lire';
+      return old==='Lire' ?  'Cacher' : 'Lire';
     });
   });
 </script>

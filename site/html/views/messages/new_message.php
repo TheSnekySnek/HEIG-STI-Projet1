@@ -1,17 +1,18 @@
 <?php
 session_start();
-$errors = null;
 if (isset($_SESSION['errors'])) {
     $errors = $_SESSION['errors'];
     $sendTo = $_SESSION['old_post']['sendTo'];
     $subject = $_SESSION['old_post']['subject'];
     $content = $_SESSION['old_post']['content'];
+    $_SESSION['errors'] = null;
 }
 
 function printValidity($field_name) {
     global $errors;
     return isset($errors) && in_array($field_name, $errors) ? 'is-invalid' : 'is-valid';
 }
+
 ?>
 
 <!doctype html>
@@ -27,7 +28,7 @@ function printValidity($field_name) {
                     <div class="form-group">
                         <label for="sendTo">Pseudo a contacter</label>
                         <input type="text"
-                               class="form-control <?=isset($errors)? printValidity('sendTo') : ''?>"
+                               class="form-control <?=!empty($errors) ? printValidity('sendTo') : ''?>"
                                id="sendTo"
                                name="sendTo"
                                required
