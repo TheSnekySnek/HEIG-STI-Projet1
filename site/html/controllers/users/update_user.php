@@ -13,13 +13,13 @@ if( !isset($_POST['username']) || !isset($_POST['password']) ){
 // Check if we need to update the password
 if(empty($_POST['password'])){
     // Update the user
-    $sql = $file_db->prepare("UPDATE users SET `is_admin` = ?, `is_active` = ? WHERE `username` = ?");
-    $result = $sql->execute([isset($_POST['is_admin']) ? 'true' : 'false', isset($_POST['is_active']) ? 'true' : 'false', $_POST['username']]);
+    $sql = $file_db->prepare("UPDATE users SET `is_admin` = ? WHERE `username` = ?");
+    $result = $sql->execute([isset($_POST['is_admin']) ? 'true' : 'false', $_POST['username']]);
 }
 else{
     // Update the user
-    $sql = $file_db->prepare("UPDATE users SET `password` = ?, `is_admin` = ?, `is_active` = ? WHERE `username` = ?");
-    $result = $sql->execute([$_POST['password'], isset($_POST['is_admin']) ? 'true' : 'false', isset($_POST['is_active']) ? 'true' : 'false', $_POST['username']]);
+    $sql = $file_db->prepare("UPDATE users SET `password` = ?, `is_admin` = ? WHERE `username` = ?");
+    $result = $sql->execute([$_POST['password'], isset($_POST['is_admin']) ? 'true' : 'false', $_POST['username']]);
 }
 
 // Redirect the user
