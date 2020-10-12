@@ -1,6 +1,9 @@
 <?php
 include "../../../databases/db_connection.php";
-$auth_user = 'TheSnekySnek'; // TODO: change for the real authenticated user
+
+session_start();
+include "../../scripts/check_authentication.php";
+$auth_user = $_SESSION['user'];
 if (isset($_GET['id'])) {
     // check if the message exist and belongs to the auth user
     $query = $file_db->prepare("SELECT count(*) FROM messages WHERE id = ? AND `to` = ?");

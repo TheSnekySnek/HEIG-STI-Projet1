@@ -1,13 +1,8 @@
-<?php include "../../../databases/db_connection.php"; ?>
-
 <?php
-session_start();
+include "../../../databases/db_connection.php";
 
-// Check if the user is logged in
-if( !isset($_SESSION['user']) ){
-    header('Location: views/users/login.php');
-    die();
-}
+session_start();
+include "../../scripts/check_authentication.php";
 
 // Check if the new password was sent
 if( !isset($_POST['password'])){
