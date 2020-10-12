@@ -3,16 +3,9 @@
 <?php
 session_start();
 
-// Check if the user is logged in
-if( !isset($_SESSION['user']) ){
-    header('Location: /views/users/login.php');
-    die();
-}
-// Check if the user is admin
-if( $_SESSION['admin'] == 'false' ){
-    header('Location: /views/messages/messages.php');
-    die();
-}
+include "../../scripts/check_authentication.php";
+include "../../scripts/check_is_admin.php";
+
 // Make sure all paramaters have been passed
 if( !isset($_POST['username']) ){
     header('Location: /views/users/show_users.php');
