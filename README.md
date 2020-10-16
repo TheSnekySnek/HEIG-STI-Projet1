@@ -20,10 +20,10 @@ Pour finir il faut vérifier que la base de données ainsi que le répertoire `d
 ## Manuel d'utilisation
 ### Login
 
-Pour acceder à l'application, l'utilisateur doit se connecter via l'adresse http://localhost:8080/views/users/login.php
+Pour accéder à l'application, l'utilisateur doit se connecter via l'adresse http://localhost:8080/views/users/login.php
 ![Login](./images/login.png)
 
-Les utilisateurs suivants sont disponible:
+Les utilisateurs suivants sont disponibles:
 | User  |  Password | Admin  | Actif  |
 |---|---|---|---|
 | admin | admin1234  | Oui  | Oui  |
@@ -70,6 +70,6 @@ L'administrateur peut aussi créer un nouvel utilisateur grace au bouton `Ajoute
 ![Nouveau message](./images/new_user.png)
 
 ### Modifier et supprimer un utilisateur
-En selectionant `Modifier` dans la liste des utilisateurs, l'administrateur peut modifier les propriété d'un utilisateur tel que son mot de passe, si il est administrateur ou peut encore le supprimer.
+En selectionant `Modifier` dans la liste des utilisateurs, l'administrateur peut modifier les propriétés d'un utilisateur tel que son mot de passe, si il est administrateur ou peut encore le supprimer.
 
 ![Nouveau message](./images/edit_user.png)
