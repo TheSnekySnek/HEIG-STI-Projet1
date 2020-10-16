@@ -3,6 +3,7 @@ session_start();
 include "../../../databases/db_connection.php";
 include "../../scripts/check_authentication.php";
 
+// vérification des champs et affectation des variables d'erreurs
 $_SESSION['errors'] = [];
 $_SESSION['old_post'] = $_POST;
 $auth_user = $_SESSION['user'];

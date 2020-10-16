@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+// gestion des messages d'erreur
+// récupération des anciennes valeurs
 if (isset($_SESSION['errors'])) {
     $errors = $_SESSION['errors'];
     $sendTo = $_SESSION['old_post']['sendTo'];
@@ -8,6 +11,7 @@ if (isset($_SESSION['errors'])) {
     $_SESSION['errors'] = null;
 }
 
+// vérifie si le champ est valide
 function printValidity($field_name) {
     global $errors;
     return isset($errors) && in_array($field_name, $errors) ? 'is-invalid' : 'is-valid';

@@ -5,12 +5,15 @@ $query = $file_db->prepare("SELECT * FROM messages WHERE id = ?");
 $query->execute([$_GET['id']]);
 $message = $query->fetch();
 
+// gestion des erreurs
+// récupération de l'ancienne valeur
 $errors = null;
 if (isset($_SESSION['errors'])) {
     $errors = $_SESSION['errors'];
     $content = $_SESSION['old_post']['content'];
 }
 
+// vérifie si le champ est valide
 function printValidity($field_name) {
     global $errors;
     return isset($errors) && in_array($field_name, $errors) ? 'is-invalid' : 'is-valid';
