@@ -12,7 +12,7 @@ if( !isset($_POST['username']) ){
     die();
 }
 // Update the user
-$sql = $file_db->prepare("UPDATE users SET `is_active` = 'false' WHERE `username` = ?");
+$sql = $file_db->prepare("UPDATE users SET `is_active` = 0 WHERE `username` = ?");
 $result = $sql->execute([$_POST['username']]);
 
 // Redirect the user
