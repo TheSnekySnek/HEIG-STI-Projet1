@@ -19,6 +19,7 @@ Pour finir il faut vérifier que la base de données ainsi que le répertoire `d
 
 ## Manuel d'utilisation
 ### Login
+//TODO: créer 2-3 utilisateurs dans la db et les lister ici avec les mdp
 
 ### Voir les messages reçus
 Lorsqu'on se connecte, on arrive sur cette page. Il est aussi possible d'y accéder en cliquant sur le lien `Mes messages` dans la barre de navigation.  
