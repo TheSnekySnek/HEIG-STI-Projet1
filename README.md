@@ -1,4 +1,4 @@
-# HEIG-STI-Projet1
+# HEIG-STI-Projet1 - Groupe 11
 
 ## Install
 Depuis le répertoire racine du repo, exécuter les commandes suivantes : 
