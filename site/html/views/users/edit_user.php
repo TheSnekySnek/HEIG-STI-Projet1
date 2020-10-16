@@ -30,7 +30,7 @@ if(empty($user)){
                 <input type="password" class="form-control" id="password" name="password">
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="is_admin" name="is_admin" <?=$user['is_admin'] == 'true' ? "checked" : ""?>>
+                <input type="checkbox" class="form-check-input" id="is_admin" name="is_admin" <?=$user['is_admin'] ? "checked" : ""?>>
                 <label class="form-check-label" for="is_admin">Admin</label>
             </div>
             <button type="submit" class="btn btn-primary">Modifier</button>

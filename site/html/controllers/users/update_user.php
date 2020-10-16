@@ -14,12 +14,12 @@ if( !isset($_POST['username']) || !isset($_POST['password']) ){
 if(empty($_POST['password'])){
     // Update the user
     $sql = $file_db->prepare("UPDATE users SET `is_admin` = ? WHERE `username` = ?");
-    $result = $sql->execute([isset($_POST['is_admin']) ? 'true' : 'false', $_POST['username']]);
+    $result = $sql->execute([isset($_POST['is_admin']), $_POST['username']]);
 }
 else{
     // Update the user
     $sql = $file_db->prepare("UPDATE users SET `password` = ?, `is_admin` = ? WHERE `username` = ?");
-    $result = $sql->execute([$_POST['password'], isset($_POST['is_admin']) ? 'true' : 'false', $_POST['username']]);
+    $result = $sql->execute([$_POST['password'], isset($_POST['is_admin']), $_POST['username']]);
 }
 
 // Redirect the user

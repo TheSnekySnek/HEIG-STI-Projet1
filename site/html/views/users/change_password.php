@@ -3,7 +3,6 @@
 <?php include "../head.php";?>
 <body>
 <?php include "../nav.php"; ?>
-<body>
     <div class="container">
         <h1 class="mt-2">Changer de mot de passe</h1>
 
