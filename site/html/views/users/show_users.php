@@ -22,13 +22,13 @@ include "../../scripts/check_is_admin.php";
             </thead>
             <tbody>
             <?php
-            $sql = $file_db->prepare("SELECT * FROM users WHERE `is_active` = 'true'");
+            $sql = $file_db->prepare("SELECT * FROM users WHERE `is_active` = 1");
             $sql->execute();
             foreach ($sql->fetchAll() as $user) {
                 ?>
                 <tr>
                 <td><?=$user['username']?></td>
-                <td><?=$user['is_admin'] == 'true' ? "Oui" : "Non"?></td>
+                <td><?=$user['is_admin'] ? "Oui" : "Non"?></td>
                 <td><a href="./edit_user.php?username=<?=$user['username']?>">Modifier</a></td>
                 </tr>
                 <?php
