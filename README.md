@@ -20,7 +20,7 @@ Pour finir il faut vérifier que la base de données ainsi que le répertoire `d
 ## Manuel d'utilisation
 ### Login
 
-Pour accéder à l'application, l'utilisateur doit se connecter via l'adresse http://localhost:8080/views/users/login.php
+Si un utilisateur n'est pas connecté, une page de login lui sera presenté.
 ![Login](./images/login.png)
 
 Les utilisateurs suivants sont disponibles:
@@ -58,6 +58,8 @@ Une fois sur la page `Nouveau message` il faut remplir les différents champs et
 
 ### Modification du mot de passe
 L'utilisateur peux changer son mot de passe grace au bouton `Changer de mot de passe` du menu.
+
+![Nouveau message](./images/change_password.png)
 
 ### Liste des utilisateurs
 Un administrateur a accès à la liste des utilisateurs via le bouton `Utilisateurs` du menu.
