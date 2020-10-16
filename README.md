@@ -19,7 +19,16 @@ Pour finir il faut vérifier que la base de données ainsi que le répertoire `d
 
 ## Manuel d'utilisation
 ### Login
-//TODO: créer 2-3 utilisateurs dans la db et les lister ici avec les mdp
+
+Pour acceder à l'application, l'utilisateur doit se connecter via l'adresse http://localhost:8080/views/users/login.php
+![Login](./images/login.png)
+
+Les utilisateurs suivants sont disponible:
+| User  |  Password | Admin  | Actif  |
+|---|---|---|---|
+| admin | admin1234  | Oui  | Oui  |
+| toto | toto1234  | Non  | Oui  |
+| tata | tata1234  | Oui  | Non  |
 
 ### Voir les messages reçus
 Lorsqu'on se connecte, on arrive sur cette page. Il est aussi possible d'y accéder en cliquant sur le lien `Mes messages` dans la barre de navigation.  
@@ -48,9 +57,19 @@ Une fois sur la page `Nouveau message` il faut remplir les différents champs et
 ![Nouveau message](./images/new_message.png)
 
 ### Modification du mot de passe
+L'utilisateur peux changer son mot de passe grace au bouton `Changer de mot de passe` du menu.
+
+### Liste des utilisateurs
+Un administrateur a accès à la liste des utilisateurs via le bouton `Utilisateurs` du menu.
+
+![Nouveau message](./images/show_users.png)
 
 ### Créer un utilisateur
+L'administrateur peut aussi créer un nouvel utilisateur grace au bouton `Ajouter un utilisateur`. L'administrateur renseigne ensuite le nom de l'utilisateur, son mot de passe et si le nouvel utilisateur est administrateur.
 
-### "Supprimer" un utilisateur (inactif)
+![Nouveau message](./images/new_user.png)
 
-### Modifier le rôle d'un utilisateur
+### Modifier et supprimer un utilisateur
+En selectionant `Modifier` dans la liste des utilisateurs, l'administrateur peut modifier les propriété d'un utilisateur tel que son mot de passe, si il est administrateur ou peut encore le supprimer.
+
+![Nouveau message](./images/edit_user.png)
