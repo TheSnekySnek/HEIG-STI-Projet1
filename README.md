@@ -26,7 +26,7 @@ Lorsqu'on se connecte, on arrive sur cette page. Il est aussi possible d'y accé
 ![Voir mes messages](./images/show_messages.png)
 
 ### Voir le contenu des messages reçus
-Depuis la page `Mes messages` il suffit de cliquer sur le bouton `Lire`
+Depuis la page `Mes messages` il suffit de cliquer sur le bouton `Lire` du message souhaité 
 pour voir le contenu du message
 
 ![Voir contenu du message](./images/show_message_content.png)
@@ -39,12 +39,8 @@ Depuis la page `Mes messages` il suffit de cliquer sur le bouton `Répondre`
 ### Supprimer un message
 Pour supprimer un message il faut aller dans la page `Mes messages` et cliquer sur le bouton `Supprimer` du message souhaité
 
-![Supprimer un message](./images/delete_message.png)
-
 ### Envoyer un message
-Pour rédiger un nouveau message il faut tout d'abord aller sur la page `Mes messages` et cliquer sur le bouton `Nouveau message`
-
-![Nouveau message](./images/new_message_button.png)
+Pour rédiger un nouveau message il faut tout d'abord aller sur la page `Mes messages` et cliquer sur le bouton `Nouveau message`  
 
 Une fois sur la page `Nouveau message` il faut remplir les différents champs et cliquer sur `Envoyer`
 
@@ -54,6 +50,6 @@ Une fois sur la page `Nouveau message` il faut remplir les différents champs et
 
 ### Créer un utilisateur
 
-### "supprimer" un utilisateur
+### "Supprimer" un utilisateur (inactif)
 
 ### Modifier le rôle d'un utilisateur
