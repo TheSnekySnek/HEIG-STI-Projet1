@@ -11,6 +11,9 @@ if( !isset($_POST['username']) || !isset($_POST['password']) ){
     die();
 }
 
+// Sanitize username
+$_POST['username'] = htmlspecialchars($_POST['username'], ENT_QUOTES);
+
 // Check if the username exists
 $sql = $file_db->prepare("SELECT * FROM users WHERE `username` = ?");
 $sql->execute([$_POST['username']]);

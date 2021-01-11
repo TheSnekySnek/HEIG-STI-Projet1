@@ -7,6 +7,7 @@ include "../../scripts/check_authentication.php";
 $_SESSION['errors'] = [];
 $_SESSION['old_post'] = $_POST;
 
+// Sanitize input
 $_POST['subject'] = htmlspecialchars($_POST['subject'], ENT_QUOTES);
 $_POST['content'] = htmlspecialchars($_POST['content'], ENT_QUOTES);
 
