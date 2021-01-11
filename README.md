@@ -1,4 +1,4 @@
-# HEIG-STI-Projet1 - Groupe 11
+# HEIG-STI-Projet2
 
 ## Install
 Depuis le répertoire racine du repo, exécuter les commandes suivantes : 
@@ -16,6 +16,8 @@ docker exec -u root sti_project service php5-fpm start
 Pour finir il faut vérifier que la base de données ainsi que le répertoire `databases` soient modifiable.
 `chmod o+w ./site/databases`
 `chmod o+w ./site/databases/database.sqlite`
+
+Le mot de passe de phpliteadmin est: **T3y6oY#uccqvIEgu0ly9sMMS**
 
 ## Manuel d'utilisation
 ### Login
