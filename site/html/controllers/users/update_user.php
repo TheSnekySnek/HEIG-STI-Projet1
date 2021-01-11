@@ -17,9 +17,12 @@ if(empty($_POST['password'])){
     $result = $sql->execute([isset($_POST['is_admin']), $_POST['username']]);
 }
 else{
+    // Generate the password hash
+    $hash = password_hash($_POST['password'], PASSWORD_DEFAULT, ['cost' => 12]);
+
     // Update the user
     $sql = $file_db->prepare("UPDATE users SET `password` = ?, `is_admin` = ? WHERE `username` = ?");
-    $result = $sql->execute([$_POST['password'], isset($_POST['is_admin']), $_POST['username']]);
+    $result = $sql->execute([$hash, isset($_POST['is_admin']), $_POST['username']]);
 }
 
 // Redirect the user

@@ -10,9 +10,12 @@ if( !isset($_POST['password'])){
     die();
 }
 
+// Generate the password hash
+$hash = password_hash($_POST['password'], PASSWORD_DEFAULT, ['cost' => 12]);
+
 // Update the password associated with user
 $sql = $file_db->prepare("UPDATE users SET `password` = ? WHERE `username` = ?");
-$sql->execute([$_POST['password'], $_SESSION['user']]);
+$sql->execute([$hash, $_SESSION['user']]);
 
 header('Location: /views/users/change_password.php');
 die();
