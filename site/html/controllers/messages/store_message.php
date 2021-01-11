@@ -6,6 +6,10 @@ include "../../scripts/check_authentication.php";
 // vérification des champs et affectation des variables d'erreurs
 $_SESSION['errors'] = [];
 $_SESSION['old_post'] = $_POST;
+
+$_POST['subject'] = htmlspecialchars($_POST['subject'], ENT_QUOTES);
+$_POST['content'] = htmlspecialchars($_POST['content'], ENT_QUOTES);
+
 $auth_user = $_SESSION['user'];
 if (empty($_POST['sendTo']))
     $_SESSION['errors'][] = 'sendTo';

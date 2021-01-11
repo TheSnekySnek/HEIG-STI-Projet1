@@ -31,7 +31,7 @@ function printValidity($field_name) {
             <form action="/controllers/messages/reply_message.php" method="post">
                 <input type="hidden" name="id" value="<?=$message['id']?>">
                 <div class="form-group">
-                    <label for="content">RE: <?=$message['subject']?></label>
+                    <label for="content">RE: <?=htmlspecialchars($message['subject'])?></label>
                     <textarea name="content"
                               id="content"
                               class="form-control <?=isset($errors)? printValidity('content') : ''?>"
